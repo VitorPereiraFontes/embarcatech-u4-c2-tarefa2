@@ -3,6 +3,13 @@
 #include "pico/stdlib.h"
 #include "pico/bootrom.h"
 
+#define GREEN_LED_PIN 11
+#define BLUE_LED_PIN 12
+#define RED_LED_PIN 13
+
+void resetar_leds();
+void inicializar_leds();
+
 int main() {
     // Define um buffer para armazenar o texto enviado
     char buffer[1024];
