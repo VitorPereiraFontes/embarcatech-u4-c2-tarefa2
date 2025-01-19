@@ -43,3 +43,19 @@ int main() {
         sleep_ms(800);
     }
 }
+
+void inicializar_leds(){
+    gpio_init(RED_LED_PIN);
+    gpio_init(GREEN_LED_PIN);
+    gpio_init(BLUE_LED_PIN);
+
+    gpio_set_dir(RED_LED_PIN,GPIO_OUT);
+    gpio_set_dir(GREEN_LED_PIN,GPIO_OUT);
+    gpio_set_dir(BLUE_LED_PIN,GPIO_OUT);
+}
+
+void resetar_leds(){
+    gpio_put(RED_LED_PIN,false);
+    gpio_put(BLUE_LED_PIN,false);
+    gpio_put(GREEN_LED_PIN,false);
+}
