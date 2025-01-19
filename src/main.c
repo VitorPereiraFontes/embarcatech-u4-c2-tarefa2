@@ -17,6 +17,9 @@ int main() {
     // Inicializa a comunicação UART
     stdio_init_all();
 
+    // Inicializa os leds
+    inicializar_leds();
+
     while (true) {
         scanf("%s",buffer);
 
@@ -26,15 +29,37 @@ int main() {
         printf("O comando recebido foi: %s\n",buffer);
 
         if(strcmp(buffer,"red") == 0){
+            printf("Ligando o led vermelho...\n");
+            resetar_leds();
 
+            gpio_put(RED_LED_PIN,true);
         }else if(strcmp(buffer,"green") == 0){
+            printf("ligando o led verde...\n");
 
+            resetar_leds();
+
+            gpio_put(GREEN_LED_PIN,true);
         }else if(strcmp(buffer,"blue") == 0){
+            printf("Ligando o led azul...\n");
 
+            resetar_leds();
+
+            gpio_put(BLUE_LED_PIN,true);
+        }else if(strcmp(buffer,"white") == 0){
+            printf("Ligando todos os leds...\n");
+
+            gpio_put(RED_LED_PIN,true);
+            gpio_put(GREEN_LED_PIN,true);
+            gpio_put(BLUE_LED_PIN,true);
+
+        }else if(strcmp(buffer,"off") == 0){
+            printf("Desligando o led...\n");
+
+            resetar_leds();
         }else if(strcmp(buffer,"buzzer") == 0){
 
         }else if(strcmp(buffer,"boot") == 0){
-            printf("Habilitando o modo bootsel...");
+            printf("Habilitando o modo bootsel...\n");
             reset_usb_boot(0,0);
         }
 
