@@ -2,10 +2,12 @@
 #include <string.h>
 #include "pico/stdlib.h"
 #include "pico/bootrom.h"
+#include "buzzer.h"
 
 #define GREEN_LED_PIN 11
 #define BLUE_LED_PIN 12
 #define RED_LED_PIN 13
+#define BUZZER_PIN 10
 
 void resetar_leds();
 void inicializar_leds();
@@ -19,6 +21,9 @@ int main() {
 
     // Inicializa os leds
     inicializar_leds();
+	  
+    Buzzer bz;
+	  Buzzer_init(&bz, BUZZER_PIN);
 
     while (true) {
         scanf("%s",buffer);
@@ -57,7 +62,7 @@ int main() {
 
             resetar_leds();
         }else if(strcmp(buffer,"buzzer") == 0){
-
+			      Buzzer_play(&bz, 2090, 500);
         }else if(strcmp(buffer,"boot") == 0){
             printf("Habilitando o modo bootsel...\n");
             reset_usb_boot(0,0);
