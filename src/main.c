@@ -62,7 +62,9 @@ int main() {
 
             resetar_leds();
         }else if(strcmp(buffer,"buzzer") == 0){
-			      Buzzer_play(&bz, 2090, 500);
+            printf("Tocando o buzzer...\n");
+
+			Buzzer_play(&bz, 2090, 500);
         }else if(strcmp(buffer,"boot") == 0){
             printf("Habilitando o modo bootsel...\n");
             reset_usb_boot(0,0);
