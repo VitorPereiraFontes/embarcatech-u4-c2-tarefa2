@@ -5,6 +5,10 @@ Tarefa 2 da unidade 4 do curso de capacitação do programa Embarcatech
 
 Este projeto utiliza uma comunicação UART para controlar LEDs RGB e um buzzer conectados a uma placa microcontroladora (como a Raspberry Pi Pico). Comandos recebidos via UART acionam diferentes cores nos LEDs, sons no buzzer ou funcionalidades adicionais como reiniciar no modo de boot USB.
 
+## Demonstração
+
+Um vídeo de demonstração do projeto está disponível: https://drive.google.com/file/d/1sAyIKPQNuK7sf9TgTGy_FcIy1GZoa_5w/view
+
 ## Funcionalidades
 
 1. **Controle de LEDs**:
